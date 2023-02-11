@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
 import cloudy from "./img/cloudy.png";
+import CurrentWeather from "./CurrentWeather";
 
 export default function App() {
   let [city, setCity] = useState("");
@@ -13,7 +14,6 @@ export default function App() {
   function handleSubmit(event) {
     event.preventDefault();
     setCity(changedInput);
-    console.log(city);
   }
   return (
     <div className="App">
@@ -34,33 +34,7 @@ export default function App() {
         </form>
       </header>
       <body>
-        <div className="current-weather">
-          <div className="current-weather-col">
-            <h1>Dublin</h1>
-            <ul>
-              <li>Feels like:15C</li>
-              <li>10/9</li>
-            </ul>
-          </div>
-
-          <img src={cloudy} alt="weather icon" />
-          <div className="current-weather-col">
-            <h2>20C</h2>
-            <ul>
-              <li>Humidity: 40%</li>
-              <li>Pressure: 40%</li>
-              <li>Wind: 40%</li>
-            </ul>
-          </div>
-        </div>
-        <div className="Forecast">
-          <div>Mon</div>
-          <img src={cloudy} alt="weather icon" />
-          <div>
-            <span className="max-tem">{20}↑</span>
-            <span className="min-tem"> {15}↓</span>
-          </div>
-        </div>
+        <CurrentWeather city={city} />
       </body>
       <footer>
         <a href="https://github.com/unicornbug/purple-weather">GitHub link</a>
