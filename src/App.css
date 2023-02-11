@@ -1,7 +1,16 @@
-.container {
+.date-row {
+  flex-wrap: nowrap;
   display: flex;
   justify-content: center;
 }
-.date {
+
+.search-row {
+  display: flex;
+  justify-content: center;
+}
+
+.current-weather {
   flex-wrap: nowrap;
+  display: flex;
+  justify-content: center;
 }
