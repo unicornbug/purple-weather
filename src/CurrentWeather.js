@@ -42,8 +42,9 @@ export default function CurrentWeather({ city }) {
       <div className="current-weather">
         <div className="current-weather-col">
           <h1>{data.cityName}</h1>
-          <h3>{data.description}</h3>
+
           <ul>
+            <li className="description">{data.description}</li>
             <li>Feels like: {Math.round(data.feels)}</li>
             <li>
               <span className="minT">{Math.round(data.minT)}↓</span>

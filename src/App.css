@@ -11,6 +11,12 @@
   list-style-type: none;
 }
 
+.App footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+
 .search-row {
   display: flex;
   justify-content: center;
@@ -21,4 +27,8 @@
   display: flexbox;
   width: 1rem;
   margin-top: 0.4rem;
+}
+.link {
+  font-size: smaller;
+  text-decoration: none;
 }

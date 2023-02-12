@@ -36,7 +36,9 @@ export default function App() {
         <CurrentWeather city={city} />
       </div>
       <footer>
-        <a href="https://github.com/unicornbug/purple-weather">GitHub link</a>
+        <a className="link" href="https://github.com/unicornbug/purple-weather">
+          source code by unicornbug
+        </a>
       </footer>
     </div>
   );
