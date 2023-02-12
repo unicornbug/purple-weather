@@ -1,0 +1,16 @@
+.current-weather {
+  flex-wrap: nowrap;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.icon-cloud {
+  max-height: 7rem;
+}
+
+.minT {
+  color: rgb(97, 8, 148);
+}
+.maxT {
+  color: rgb(216, 112, 147);
+}

@@ -1,7 +1,8 @@
 import "./App.css";
 import React, { useState } from "react";
-import cloudy from "./img/cloudy.png";
 import CurrentWeather from "./CurrentWeather";
+import DateTime from "./DateTime.js";
+import locationPin from "./img/locationPin.svg";
 
 export default function App() {
   let [city, setCity] = useState("");
@@ -18,14 +19,12 @@ export default function App() {
   return (
     <div className="App">
       <header className="container">
-        <div className="date-row">
-          <div className="date">Monday </div>
-          <div className="date">13:02 </div>
-          <div className="date">16/2/2017 </div>
-        </div>
+        <DateTime />
 
         <form className="search-row" onSubmit={handleSubmit}>
-          <button type="submit">📍</button>
+          <button type="submit">
+            <img className="pin" src={locationPin} alt="location pin" />
+          </button>
           <input
             placeholder="Type in city"
             type="search"
@@ -33,9 +32,9 @@ export default function App() {
           />
         </form>
       </header>
-      <body>
+      <div>
         <CurrentWeather city={city} />
-      </body>
+      </div>
       <footer>
         <a href="https://github.com/unicornbug/purple-weather">GitHub link</a>
       </footer>

@@ -1,0 +1,8 @@
+.date-row {
+  flex-wrap: nowrap;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  color: rgb(239, 239, 239);
+}
