@@ -4,7 +4,6 @@ import "./current-weather.css";
 import axios from "axios";
 
 export default function CurrentWeather({ city }) {
-  const apiKey = `c7546b821a53b6bba326661973b08c2d`;
   let [coord, setCoord] = useState({});
   let [data, setData] = useState({ ready: false });
 
@@ -29,15 +28,18 @@ export default function CurrentWeather({ city }) {
   }
 
   useEffect(() => {
+    const apiKey = `c7546b821a53b6bba326661973b08c2d`;
     let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${coord.lat}&lon=${coord.lon}&appid=${apiKey}&units=metric`;
     axios.get(weatherUrl).then(handleWeatherData);
   }, [coord]);
 
   useEffect(() => {
+    const apiKey = `c7546b821a53b6bba326661973b08c2d`;
     let url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
     axios.get(url).then(updateCoordinates);
   }, [city]);
-  if (data !== false) {
+
+  if (data.ready !== false) {
     return (
       <div className="current-weather">
         <div className="current-weather-col">
