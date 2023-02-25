@@ -8,13 +8,15 @@ export default function DateTime() {
   let time = new Intl.DateTimeFormat("en-US", {
     hour: "2-digit",
     minute: "2-digit",
+    weekday: "long",
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
   }).format(timestamp);
+
   return (
     <div className="date-row">
       <div className="date-time"> {time}</div>
-      <div className="date-time">Monday </div>
-
-      <div className="date-time"> 16/2/2017 </div>
     </div>
   );
 }
