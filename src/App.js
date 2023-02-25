@@ -10,17 +10,6 @@ export default function App() {
   let [city, setCity] = useState("");
   let [coord, setCoord] = useState({});
 
-  function handleLocationSearch(event) {
-    function sucess(position) {
-      const crd = position.coords;
-      setCoord({
-        lat: crd.latitude,
-        lon: crd.longitude,
-      });
-    }
-    navigator.geolocation.getCurrentPosition(sucess);
-  }
-
   function handleSearch(event) {
     event.preventDefault();
     setChangedInput(event.target.value);
@@ -38,6 +27,17 @@ export default function App() {
     let url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
     axios.get(url).then(updateCoordinates);
   }, [city]);
+
+  function handleLocationSearch(event) {
+    function sucess(position) {
+      const crd = position.coords;
+      setCoord({
+        lat: crd.latitude,
+        lon: crd.longitude,
+      });
+    }
+    navigator.geolocation.getCurrentPosition(sucess);
+  }
 
   return (
     <div className="app">
