@@ -11,3 +11,14 @@ h2 {
   color: grey;
   font-size: 0.8rem;
 }
+
+.f:hover,
+.c:hover {
+  cursor: pointer;
+}
+.minT {
+  color: rgb(97, 8, 148);
+}
+.maxT {
+  color: rgb(216, 112, 147);
+}

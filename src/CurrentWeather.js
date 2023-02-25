@@ -36,22 +36,23 @@ export default function CurrentWeather({ coord }) {
           <h1>{data.cityName}</h1>
 
           <ul>
-            <li className="description">{data.description}</li>
-            <li>Feels like: {Math.round(data.feels)}</li>
-            <li>
-              <span className="minT">{Math.round(data.minT)}↓</span>
-              <span className="maxT"> {Math.round(data.maxT)}↑</span>
-            </li>
+            <li>Humidity: {data.humidity}%</li>
+            <li>Pressure: {Math.round(data.pressure / 10) / 100} bar</li>
+            <li>Wind: {Math.round(data.wind * 10) / 10} m/s</li>
           </ul>
         </div>
 
         <WeatherIcon icon={data.icon} />
         <div className="current-weather-col">
-          <Temperature temp={Math.round(data.temp)} />
           <ul>
-            <li>Humidity: {data.humidity}%</li>
-            <li>Pressure: {Math.round(data.pressure / 10) / 100} bar</li>
-            <li>Wind: {Math.round(data.wind * 10) / 10} m/s</li>
+            <li className="description">{data.description}</li>
+
+            <Temperature
+              temp={data.temp}
+              feels={data.feels}
+              minT={data.minT}
+              maxT={data.maxT}
+            />
           </ul>
         </div>
       </div>

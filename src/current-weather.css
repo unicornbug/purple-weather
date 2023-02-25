@@ -2,13 +2,15 @@ ul {
   padding: 0 0 0 0;
 }
 
-h1,
-h2 {
+h1 {
   margin-bottom: 0;
   font-weight: 500;
 }
 h2 {
+  margin-top: 0.4rem;
   font-size: 2rem;
+  margin-bottom: 0;
+  font-weight: 500;
 }
 
 .current-weather {
@@ -20,6 +22,7 @@ h2 {
 }
 
 .description {
+  margin-top: 1.5rem;
   font-size: 1.3rem;
   font-style: oblique;
 }
