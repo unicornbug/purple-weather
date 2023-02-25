@@ -1,0 +1,13 @@
+h2 {
+  font-size: 2rem;
+}
+.units-cf {
+  font-size: 1.8rem;
+}
+.f,
+.c {
+  background-color: white;
+  border-style: none;
+  color: grey;
+  font-size: 0.8rem;
+}

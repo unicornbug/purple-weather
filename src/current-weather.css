@@ -1,6 +1,7 @@
 ul {
   padding: 0 0 0 0;
 }
+
 h1,
 h2 {
   margin-bottom: 0;
@@ -9,8 +10,9 @@ h2 {
 h2 {
   font-size: 2rem;
 }
+
 .current-weather {
-  margin-top: 2%;
+  padding-top: 2%;
   flex-wrap: nowrap;
   display: flex;
   justify-content: space-evenly;

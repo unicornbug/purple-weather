@@ -40,12 +40,16 @@ export default function App() {
   }, [city]);
 
   return (
-    <div className="App">
+    <div className="app">
       <header className="container">
         <DateTime />
 
         <form className="search-row" onSubmit={handleSubmit}>
-          <button type="submit" onClick={handleLocationSearch}>
+          <button
+            className="pin-button"
+            type="submit"
+            onClick={handleLocationSearch}
+          >
             <img className="pin" src={locationPin} alt="location pin" />
           </button>
           <input
@@ -55,9 +59,9 @@ export default function App() {
           />
         </form>
       </header>
-      <div>
-        <CurrentWeather coord={coord} />
-      </div>
+
+      <CurrentWeather coord={coord} />
+
       <footer>
         <a className="link" href="https://github.com/unicornbug/purple-weather">
           source code by unicornbug

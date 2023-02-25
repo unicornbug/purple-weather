@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import cloudy from "./img/cloudy.png";
+import WeatherIcon from "./WeatherIcon";
+import Temperature from "./Temperature";
 import "./current-weather.css";
 import axios from "axios";
 
@@ -44,9 +45,9 @@ export default function CurrentWeather({ coord }) {
           </ul>
         </div>
 
-        <img className="icon-cloud" src={cloudy} alt="weather icon" />
+        <WeatherIcon icon={data.icon} />
         <div className="current-weather-col">
-          <h2>{Math.round(data.temp)}°C</h2>
+          <Temperature temp={Math.round(data.temp)} />
           <ul>
             <li>Humidity: {data.humidity}%</li>
             <li>Pressure: {Math.round(data.pressure / 10) / 100} bar</li>
