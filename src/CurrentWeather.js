@@ -58,6 +58,10 @@ export default function CurrentWeather({ coord }) {
       </div>
     );
   } else {
-    return <p>enter city name</p>;
+    return (
+      <p>
+        Enter city name or double click on location pin for your local weather
+      </p>
+    );
   }
 }

@@ -48,7 +48,7 @@ export default function App() {
           <button
             className="pin-button"
             type="submit"
-            onClick={handleLocationSearch}
+            onDoubleClick={handleLocationSearch}
           >
             <img className="pin" src={locationPin} alt="location pin" />
           </button>
