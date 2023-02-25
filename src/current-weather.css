@@ -26,14 +26,3 @@ h2 {
   font-size: 1.3rem;
   font-style: oblique;
 }
-
-.icon-cloud {
-  max-height: 7rem;
-}
-
-.minT {
-  color: rgb(97, 8, 148);
-}
-.maxT {
-  color: rgb(216, 112, 147);
-}
