@@ -27,7 +27,7 @@ export default function App() {
 
   useEffect(() => {
     const apiKey = `c7546b821a53b6bba326661973b08c2d`;
-    let url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
+    let url = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
     axios.get(url).then(updateCoordinates);
   }, [city]);
 
