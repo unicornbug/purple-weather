@@ -7,7 +7,7 @@
 .app header {
   background: rgb(112, 50, 188);
 }
-.app .pin-button {
+.app .location-pin-button {
   background-color: white;
   border-color: rgb(112, 50, 188);
   border-width: 1px;

@@ -19,7 +19,10 @@ export default function App() {
     setCity(changedInput);
   }
   function updateCoordinates(response) {
-    setCoord(response.data[0]);
+    setCoord({
+      lat: response.data[0].lat,
+      lon: response.data[0].lon,
+    });
   }
 
   useEffect(() => {
@@ -46,7 +49,7 @@ export default function App() {
 
         <form className="search-row" onSubmit={handleSubmit}>
           <button
-            className="pin-button"
+            className="location-pin-button"
             type="submit"
             onDoubleClick={handleLocationSearch}
           >
