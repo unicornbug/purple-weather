@@ -30,8 +30,10 @@ export default function Temperature({ temp, feels, minT, maxT }) {
           </h2>
         </li>
 
-        <li>Feels like: {Math.round(feels)}°C</li>
-        <li>
+        <li className="feels-like">
+          feels like: <span className="temp">{Math.round(feels)}°C</span>
+        </li>
+        <li className="max-min">
           <span className="minT">{Math.round(minT)}°↓</span>
           <span className="maxT"> {Math.round(maxT)}°↑</span>
         </li>
@@ -56,10 +58,12 @@ export default function Temperature({ temp, feels, minT, maxT }) {
             </span>
           </h2>
         </li>
-        <li>Feels like: {feelsF}°F</li>
-        <li className="day-temperature">
-          <span className="minT">{minTF}°↓ </span>
-          <span className="maxT">{maxTF}°↑</span>
+        <li className="feels-like">
+          feels like: <span className="temp">{feelsF}°F</span>
+        </li>
+        <li className="max-min">
+          <span>{minTF}°↓ </span>
+          <span>{maxTF}°↑</span>
         </li>
       </ul>
     );

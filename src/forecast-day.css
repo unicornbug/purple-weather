@@ -1,4 +1,11 @@
+span {
+  margin-left: 0.5rem;
+}
 .day-temperature {
   display: flex;
   justify-content: space-between;
+}
+
+.day {
+  margin-bottom: 0.5rem;
 }
