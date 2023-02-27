@@ -1,0 +1,4 @@
+.day-temperature {
+  display: flex;
+  justify-content: space-between;
+}

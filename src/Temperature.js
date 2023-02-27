@@ -57,9 +57,9 @@ export default function Temperature({ temp, feels, minT, maxT }) {
           </h2>
         </li>
         <li>Feels like: {feelsF}°F</li>
-        <li>
-          <span className="minT">{minTF}°↓</span>
-          <span className="maxT"> {maxTF}°↑</span>
+        <li className="day-temperature">
+          <span className="minT">{minTF}°↓ </span>
+          <span className="maxT">{maxTF}°↑</span>
         </li>
       </ul>
     );

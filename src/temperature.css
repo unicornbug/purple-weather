@@ -1,5 +1,10 @@
 h2 {
   font-size: 2rem;
+  text-align: center;
+}
+.day-temperature {
+  display: flex;
+  justify-content: space-between;
 }
 .units-cf {
   font-size: 1.8rem;

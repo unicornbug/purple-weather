@@ -4,11 +4,12 @@ import CurrentWeather from "./CurrentWeather";
 import axios from "axios";
 import DateTime from "./DateTime.js";
 import locationPin from "./img/locationPin.svg";
+import Forecast from "./Forecast";
 
 export default function App() {
   let [changedInput, setChangedInput] = useState("");
   let [city, setCity] = useState("");
-  let [coord, setCoord] = useState({});
+  let [coord, setCoord] = useState({ ready: false });
 
   function handleSearch(event) {
     event.preventDefault();
@@ -20,6 +21,7 @@ export default function App() {
   }
   function updateCoordinates(response) {
     setCoord({
+      ready: true,
       lat: response.data[0].lat,
       lon: response.data[0].lon,
     });
@@ -35,41 +37,78 @@ export default function App() {
     function sucess(position) {
       const crd = position.coords;
       setCoord({
+        ready: true,
         lat: crd.latitude,
         lon: crd.longitude,
       });
     }
     navigator.geolocation.getCurrentPosition(sucess);
   }
+  if (coord.ready !== false) {
+    return (
+      <div className="app">
+        <header className="container">
+          <DateTime />
 
-  return (
-    <div className="app">
-      <header className="container">
-        <DateTime />
+          <form className="search-row" onSubmit={handleSubmit}>
+            <button
+              className="location-pin-button"
+              type="submit"
+              onDoubleClick={handleLocationSearch}
+            >
+              <img className="pin" src={locationPin} alt="location pin" />
+            </button>
+            <input
+              placeholder="Type in city"
+              type="search"
+              onChange={handleSearch}
+            />
+          </form>
+        </header>
 
-        <form className="search-row" onSubmit={handleSubmit}>
-          <button
-            className="location-pin-button"
-            type="submit"
-            onDoubleClick={handleLocationSearch}
+        <CurrentWeather coord={coord} />
+        <Forecast coord={coord} />
+        <footer>
+          <a
+            className="link"
+            href="https://github.com/unicornbug/purple-weather"
           >
-            <img className="pin" src={locationPin} alt="location pin" />
-          </button>
-          <input
-            placeholder="Type in city"
-            type="search"
-            onChange={handleSearch}
-          />
-        </form>
-      </header>
+            source code by unicornbug
+          </a>
+        </footer>
+      </div>
+    );
+  } else {
+    return (
+      <div className="app">
+        <header className="container">
+          <DateTime />
 
-      <CurrentWeather coord={coord} />
+          <form className="search-row" onSubmit={handleSubmit}>
+            <button
+              className="location-pin-button"
+              type="submit"
+              onDoubleClick={handleLocationSearch}
+            >
+              <img className="pin" src={locationPin} alt="location pin" />
+            </button>
+            <input
+              placeholder="Type in city"
+              type="search"
+              onChange={handleSearch}
+            />
+          </form>
+        </header>
 
-      <footer>
-        <a className="link" href="https://github.com/unicornbug/purple-weather">
-          source code by unicornbug
-        </a>
-      </footer>
-    </div>
-  );
+        <footer>
+          <a
+            className="link"
+            href="https://github.com/unicornbug/purple-weather"
+          >
+            source code by unicornbug
+          </a>
+        </footer>
+      </div>
+    );
+  }
 }
