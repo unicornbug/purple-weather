@@ -24,14 +24,20 @@ export default function Forecast({ coord }) {
   if (data.ready !== false) {
     return (
       <div className="row">
-        <ForecastDay forecast={data.forecast[0]} />
-        <ForecastDay forecast={data.forecast[1]} />
-        <ForecastDay forecast={data.forecast[2]} />
-        <ForecastDay forecast={data.forecast[3]} />
-        <ForecastDay forecast={data.forecast[4]} />
+        {data.forecast.map(function (dailyForecast, index) {
+          if (index < 5) {
+            return (
+              <div key={index}>
+                <ForecastDay forecast={dailyForecast} />
+              </div>
+            );
+          } else {
+            return null;
+          }
+        })}
       </div>
     );
   } else {
-    return <p>forecast</p>;
+    return <p>forecast loading</p>;
   }
 }
