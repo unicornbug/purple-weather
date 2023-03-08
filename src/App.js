@@ -99,7 +99,13 @@ export default function App() {
             />
           </form>
         </header>
-
+        <p className="instructions">
+          <span>Enter city name or </span>
+          <span>
+            <em> double click </em>
+          </span>
+          <span> on location pin for your local weather.</span>
+        </p>
         <footer>
           <a
             className="link"
